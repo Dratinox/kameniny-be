@@ -20,8 +20,8 @@ router.post('/categories', Validator.validate('createCategory'), createCategory)
 /* Edit a specific category */
 router.put(
     '/categories/:id',
-    AuthGuard.verifyToken,
-    AuthGuard.adminOnly,
+    //AuthGuard.verifyToken,
+    //AuthGuard.adminOnly,
     Validator.validate('idParam'),
     updateCategory
 )
