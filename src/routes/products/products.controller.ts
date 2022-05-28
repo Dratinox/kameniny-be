@@ -56,7 +56,7 @@ export const createProduct = async (req: Request, res: Response) => {
                 price: +price,
                 slug: sluggify(title),
                 categoryId: +categoryId,
-                variation: JSON.stringify(variation),
+                variation,
             },
             req.files as {
                 mainImage: Express.Multer.File[]
