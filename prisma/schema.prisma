@@ -38,6 +38,7 @@ model Product {
   description String
   price       Int?
   imageUrl    String?   @db.VarChar(255)
+  galleryImages String[] @db.VarChar(255)
   createdAt   DateTime  @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime  @default(now()) @db.Timestamptz(6)
   deletedAt   DateTime? @db.Timestamptz(6)

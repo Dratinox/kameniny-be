@@ -1,5 +1,6 @@
 import { prisma } from '../prisma'
 import { Product, Prisma } from '@prisma/client'
+import { uploadImage } from './image.service'
 
 // Get all products
 export const getAllProducts = async (
@@ -41,11 +42,23 @@ export const getProductById = async (id: number): Promise<Product> => {
 
 // Create product
 export const createProduct = async (
-    data: Prisma.ProductCreateInput
+    data: Prisma.ProductCreateInput,
+    files: { mainImage: Express.Multer.File[]; gallery: Express.Multer.File[] }
 ): Promise<Product> => {
     try {
+        const { mainImage, gallery } = files
+        const mainImageUrl = await uploadImage(mainImage[0])
+        const galleryUrls = await Promise.all(
+            gallery.map(async (image) => await uploadImage(image))
+        )
+
+        const updatedData = { ...data, imageUrl: mainImageUrl }
         const product = await prisma.product.create({
-            data,
+            data: {
+                ...data,
+                imageUrl: mainImageUrl,
+                galleryImages: galleryUrls,
+            },
         })
         return product
     } catch (error) {

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "starry-braid-351613",
+  "private_key_id": "b50de46dff5dd92c1c7090776c2e24030486d570",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCdzOLGteydCfIF\n1qVF6epLZ+gxIsnVfcamCytX5KSkQcG2IED+fZQvr8O7anfWfdefRVIW64KNrszg\nlVL0r7nvE9kh/nqlU/iLxjYPPRwjnFz3RRCC5MEmw0njf1QdnxGWyD20Dx6kRUaz\nJI7VpEdsHZEcaFM4gsDMASwU5BPfGt5F1It0WAFSZq9c90poSj8AcCNS9iLaiCz7\nl3LCwbQrHUUPgIrYQ4rEQOzw7sKjTr7SMqffDXTRmwSzWeJ3NUkwEHM2b35AHw1u\nlnHr2WnhJY+phng26veHU68ayN/hsKXeEWT09nRItVXp4OLUj7xJV9+wMxI0EbnY\nn7qFxa5JAgMBAAECggEADvVL5mb6ntDBZ88G4+uWZW88NgMsk3+cl+MNaOOgPT9L\n+eQRESatiD8urEp9gWA0szD2pPxOZ/iSzHOvNUlelFSC88tcDCW7dOF1QKjL7O6+\nq8RY2jWNvytKKuXoHvY0DEFfQv0fbBYyi1r67LLJv+yGE8WqZNwVI0l1qKXNoetz\nhTze9zyjvHL9TyUyghUZh1FdsR+f9TXfaWJoZIProKZAPcaGyKUJKVTofDeIHxXU\nEfWK/fQppEv/YU9SklgMJBapALzeOQaRU7ClVrk8YJNHLlfPi31mfvcejNd0nmkS\nnaRpWMtiKmL7fnE3XFLTSDHeBqEhxqtb5l9B/jT20QKBgQDXn6B8YRQoAEJe+eY2\nop/lyCCmgjKtE2Ei9NCpGtmi0uXI8GNx2zwAcvz5LI1W3OKYT4f/2AepnwchxYlx\nAoQQKx9mrTjW06lg0vxiAHlGs/Nzk0gjd+w+scD8C9dnkCpTWqqqkzUWBhr7uxUy\nHBIE+VbG9+I+XvGONC4FT1efOQKBgQC7WWFqWhJVV9xILlc49hCkmm0VuT8UuBfA\nR3hnWM4V1/zEkcObT+qoAhdwiOv4HVpbiy00noSKaj0oIWIH8i0e3f9z2/BZeQF/\n0xrklD4+qOlTYMNysnWvZeOm7eosMny0TS4+Fv6RqUg+td34FMOEqBssE95Qavkn\nZMAnKil3kQKBgQCtiIKYl2ipaMwBtA1bGzakr5PXbiFquZYLlAv6jOlq6WCVfyIJ\nl++KTQDbaMe3iL205w0FEs/X62zJ+TjMAsJWYN48vFxqSJ6gli0YklkIVfswoPAF\n25X+PwCZ2M3bQ2NNAkMoVKD8wJ0my0IbugumhSUZrJYgrDirwcLn8xsJwQKBgQCe\nb70ZUqjUcaQBiucKbdWvTkVYLLvzCqhTXF2vkINgJ7NEjTzN2KzKflJSQgjEYBZs\n+ms1Z6UQ5T1o9apQq/aKdxU0ZtiA4ftpnR7OFav6E6CWeWtwUQmDVnhKUENMMzoQ\nxICJ06pfhrhpCCZ6SRz7z6qDAR5uBblFHkf+FwLQcQKBgQCPQRBtu/ZuK+GXzhCC\nIqoHi0RYd+9jXbm8kmhskgSNLYqGgkiAY7ZnmLHpp6cu+BiPEE50ebZhZuxses6y\nt5x9uR+F2BWXtwXnlLHn8Jox4W5foectr9bCtFGHGQYsD+jfpJIDYgTBpNFvWlBB\nerFAUBFSA0/Y9WemZX65fKYBXg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "smaska-account@starry-braid-351613.iam.gserviceaccount.com",
+  "client_id": "101213958064157893004",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/smaska-account%40starry-braid-351613.iam.gserviceaccount.com"
+}

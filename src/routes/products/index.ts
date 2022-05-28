@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import * as multer from 'multer'
 
 import Validator from '../../middlewares/validator'
 import AuthGuard from '../../middlewares/authenticate'
@@ -11,6 +12,8 @@ import {
 } from './products.controller'
 
 const router = Router()
+const storage = multer.memoryStorage()
+const upload = multer({ storage })
 
 /* List of products */
 router.get('/products', getAllProducts)
@@ -19,12 +22,11 @@ router.get('/products', getAllProducts)
 router.get('/products/:slug', Validator.validate('slug'), getProductBySlug)
 
 /* Create a product */
-router.post(
-    '/products',
-    AuthGuard.verifyToken,
-    Validator.validate('createProduct'),
-    createProduct
-)
+const galleryUpload = upload.fields([
+    { name: 'mainImage', maxCount: 1 },
+    { name: 'gallery', maxCount: 8 },
+])
+router.post('/products', galleryUpload, AuthGuard.verifyToken, createProduct)
 
 /* Edit a specific product */
 router.put(

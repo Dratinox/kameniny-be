@@ -49,14 +49,20 @@ const sluggify = (name: string) =>
 export const createProduct = async (req: Request, res: Response) => {
     const { title, description, price, categoryId, stocks } = req.body
     try {
-        const product = await productService.createProduct({
-            title,
-            description,
-            price: +price,
-            slug: sluggify(title),
-            categoryId: +categoryId,
-            stocks: JSON.stringify(stocks),
-        })
+        const product = await productService.createProduct(
+            {
+                title,
+                description,
+                price: +price,
+                slug: sluggify(title),
+                categoryId: +categoryId,
+                stocks: JSON.stringify(stocks),
+            },
+            req.files as {
+                mainImage: Express.Multer.File[]
+                gallery: Express.Multer.File[]
+            }
+        )
         res.status(201).json(product)
     } catch (error) {
         res.status(500).json(error)
