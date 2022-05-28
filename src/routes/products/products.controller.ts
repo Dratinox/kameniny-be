@@ -47,7 +47,7 @@ const sluggify = (name: string) =>
         .replace(/[^a-z0-9-]/g, '')
 
 export const createProduct = async (req: Request, res: Response) => {
-    const { title, description, price, categoryId, stocks } = req.body
+    const { title, description, price, categoryId, variation } = req.body
     try {
         const product = await productService.createProduct(
             {
@@ -56,7 +56,7 @@ export const createProduct = async (req: Request, res: Response) => {
                 price: +price,
                 slug: sluggify(title),
                 categoryId: +categoryId,
-                stocks: JSON.stringify(stocks),
+                variation: JSON.stringify(variation),
             },
             req.files as {
                 mainImage: Express.Multer.File[]
@@ -71,14 +71,14 @@ export const createProduct = async (req: Request, res: Response) => {
 
 export const updateProduct = async (req: Request, res: Response) => {
     const { id } = req.params
-    const { title, description, price, slug, image, stocks } = req.body
+    const { title, description, price, slug, image, variation } = req.body
     try {
         const product = await productService.updateProduct(+id, {
             title,
             description,
             price,
             slug,
-            stocks: JSON.stringify(stocks),
+            variation: JSON.stringify(variation),
         })
         res.status(200).json(product)
     } catch (error) {
