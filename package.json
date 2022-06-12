@@ -11,7 +11,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "db:migrate": "npx prisma migrate deploy",
     "db:refresh": "npm run db:reset && npm run db:migrate",
-    "db:reset": "sequelize db:migrate:undo:all",
+    "db:reset": "npx prisma migrate reset",
     "db:seed": "npx prisma db seed",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build && npm run db:migrate",
     "lint": "eslint src",

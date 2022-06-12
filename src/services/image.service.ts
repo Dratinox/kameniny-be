@@ -18,7 +18,7 @@ export const uploadImage = async (image: Express.Multer.File) => {
         await fileCloud.save(image.buffer, {
             contentType: image.mimetype,
         })
-        return `https://storage.googleapis.com/${bucket}/${newName}`
+        return `https://storage.googleapis.com/kameniny/${newName}`
     } catch (err) {
         console.error(err)
         return null

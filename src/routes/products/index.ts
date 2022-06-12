@@ -38,12 +38,6 @@ router.put(
 )
 
 /* Delete a product */
-router.delete(
-    '/products/:id',
-    AuthGuard.verifyToken,
-    AuthGuard.adminOnly,
-    Validator.validate('idParam'),
-    deleteProduct
-)
+router.delete('/products/:id', Validator.validate('idParam'), deleteProduct)
 
 export default router

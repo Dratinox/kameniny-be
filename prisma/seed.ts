@@ -35,23 +35,38 @@ const userData: Prisma.UserCreateInput[] = [
     },
 ]
 
+const categoryData: Prisma.CategoryCreateInput[] = [
+    {
+        name: 'Trika',
+    },
+    {
+        name: 'Sroubky',
+    },
+]
+
 async function main() {
     console.log(`Start seeding ...`)
     await prisma.product.deleteMany()
     await prisma.user.deleteMany()
-    for (const p of productData) {
+    for (const data of productData) {
         const product = await prisma.product.create({
-            data: p,
+            data,
         })
         console.log(`Created product with id: ${product.id}`)
     }
-    console.log(`Seeding finished.`)
 
-    for (const u of userData) {
+    for (const data of userData) {
         const user = await prisma.user.create({
-            data: u,
+            data,
         })
         console.log(`Created user with id: ${user.id}`)
+    }
+
+    for (const data of categoryData) {
+        const category = await prisma.category.create({
+            data,
+        })
+        console.log(`Created category with id: ${category.id}`)
     }
     console.log(`Seeding finished.`)
 }

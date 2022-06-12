@@ -1,6 +1,7 @@
 import { Order } from '@prisma/client'
 import { prisma } from '../prisma'
 import { PlaceOrderPayload } from '../types/order'
+import * as productService from './product.service'
 
 export const getOrders = async (userId: number): Promise<Order> => {
     return await prisma.order.findFirst({
@@ -25,6 +26,18 @@ export const placeOrder = async (
 ) => {
     try {
         const { cartItems, paymentMethod, zipCode, ...orderData } = payload
+
+        // For every item in cart update given product stock by id
+        await Promise.all(
+            cartItems.map(async (cartItem) => {
+                await productService.decreaseProductQuantity(
+                    cartItem.id,
+                    cartItem.quantity,
+                    cartItem.selectedProductSize
+                )
+            })
+        )
+
         return await prisma.order.create({
             data: {
                 userId,

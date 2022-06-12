@@ -7,13 +7,13 @@ export const getAllProducts = async (
     res: Response
 ): Promise<void> => {
     try {
-        const products = await productService.getAllProducts(
+        const productResponse = await productService.getAllProducts(
             +req.query?.category || null,
             (req.query?.search as string) || null,
-            +req.query?.offset || null,
+            +req.query?.offset || 0,
             +req.query?.size || null
         )
-        res.status(200).json(products)
+        res.status(200).json(productResponse)
     } catch (error) {
         res.status(500).json(error)
     }
